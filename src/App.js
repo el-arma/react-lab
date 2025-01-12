@@ -22,7 +22,11 @@ function App() {
   function handleChange(event) {
 
       setTitle(event.target.value);
+      
+  }
 
+  function handleShowMovieClick(){
+    alert(title);
   }
 
 
@@ -39,6 +43,8 @@ function App() {
           {title.length > 0 && <div>{message}</div>}
 
           <input type="text" value={title} onChange={handleChange}/>
+          
+          <button onClick={handleShowMovieClick} >Show movie title</button>
 
       </div>
 
