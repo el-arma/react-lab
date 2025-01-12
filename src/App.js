@@ -6,6 +6,19 @@ function App() {
 
   const [title, setTitle] = useState('Wall-E');
 
+  const movies = [
+    {title: "Wall-E"},
+    {title: "Pulp Fiction"},
+    {title: "Matrix"},
+    {title: "1670"},
+  ];
+
+
+
+
+
+
+
   let message;
     if (title.length < 5) {
         message = "Tytuł jest za krótki. Nagrywają takie filmy?";
@@ -25,16 +38,16 @@ function App() {
       
   }
 
-  function handleShowMovieClick(){
-    alert(title);
-  }
-
-
   return (
 
       <div>
 
           <h1>My favourite movies to watch</h1>
+          <h2>Titles</h2>
+
+          <ul>
+              {movies.map((movie) => <li key={movie.title}>{movie.title}</li>)}
+          </ul>
 
           <h2>My favourite movie for today is {title}</h2>
 
@@ -44,7 +57,7 @@ function App() {
 
           <input type="text" value={title} onChange={handleChange}/>
           
-          <button onClick={handleShowMovieClick} >Show movie title</button>
+          <button onClick={() => alert(title)}>Show movie title</button>
 
       </div>
 
